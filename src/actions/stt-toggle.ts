@@ -15,7 +15,7 @@ import { join } from "node:path";
 import { getAdapter } from "../adapters/registry";
 import { renderStateImage } from "../rendering/svg-renderer";
 import type { ButtonState, SttToggleSettings } from "../types/settings";
-import { DEFAULT_SETTINGS } from "../types/settings";
+import { buildShortcutString, DEFAULT_SETTINGS } from "../types/settings";
 
 const logger = streamDeck.logger.createScope("SttToggle");
 const DEBUG_LOG = join(homedir(), "voxdeck-debug.log");
@@ -83,7 +83,7 @@ export class SttToggleAction extends SingletonAction<SttToggleSettings> {
 		}
 
 		try {
-			const shortcut = settings.toggleShortcut || adapter.defaultShortcut;
+			const shortcut = buildShortcutString(settings) || settings.toggleShortcut || adapter.defaultShortcut;
 			const lastState = lastStates.get(actionId) ?? "idle";
 
 			// Send the hotkey immediately — don't wait for isRecording() first.
