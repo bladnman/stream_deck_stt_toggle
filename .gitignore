@@ -77,6 +77,11 @@ vendor/bundle/
 *.tfstate.*
 crash.log
 
+# Stream Deck
+*.sdPlugin/bin/
+*.sdPlugin/logs/
+*.streamDeckPlugin
+
 # Misc
 .cache/
 tmp/
