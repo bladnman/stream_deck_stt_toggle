@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"Name": "VoxDeck",
+	"Version": "0.1.0.0",
+	"Author": "Matt Maher",
+	"Actions": [
+		{
+			"Name": "STT Toggle",
+			"UUID": "com.voxdeck.stt-toggle.toggle",
+			"Icon": "imgs/actions/stt-toggle/icon",
+			"Tooltip": "Toggle speech-to-text recording on/off",
+			"PropertyInspectorPath": "ui/stt-toggle.html",
+			"Controllers": ["Keypad", "Encoder"],
+			"States": [
+				{
+					"Image": "imgs/actions/stt-toggle/key",
+					"ShowTitle": true,
+					"Name": "Default"
+				}
+			]
+		}
+	],
+	"Category": "VoxDeck",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Physical toggle button for speech-to-text applications. Press to record, press to stop. Always shows the real state.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 2,
+	"Software": {
+		"MinimumVersion": "6.5"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "13.0"
+		}
+	],
+	"Nodejs": {
+		"Version": "20",
+		"Debug": "enabled"
+	},
+	"UUID": "com.voxdeck.stt-toggle"
+}
